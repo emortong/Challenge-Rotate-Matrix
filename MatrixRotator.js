@@ -1,7 +1,7 @@
 /*  MatrixRotator(matrix)
  *
  *  @param matrix                        a multidimensional array containing the matrix
- *  
+ *
  *  @public property matrix              the matrix
  *
  *  @public method rotate(direction)     direction is either
@@ -13,15 +13,35 @@ var Direction = require("./Direction").Direction;
 
 function MatrixRotator(matrix){
   this.matrix = matrix;
-  
+
 };
 
 //                                         |-- Must be Direction.CW
 //                                         v        or Direction.CCW
 MatrixRotator.prototype.rotate = function(direction) {
-  // do work here
+  let arrLen = this.matrix.length;
+  let subArrsLen = this.matrix[0].length;
+  let totalLen = arrLen * subArrsLen
+  let sq = Math.sqrt(totalLen)
+  let newArr = [];
+  let num = sq;
 
-  // must be a valid Direction, see Direction.js
-
+  for(let z = 0; z < arrLen; z++) {
+    newArr.push([])
+  }
+  if(direction === Direction.CW) {
+    for(let i = 0; i < arrLen; i++) {
+      sq--
+      for(let x = 0; x < arrLen; x++) {
+        newArr[x][i] = this.matrix[sq][x];
+        newArr[x][i] = this.matrix[sq][x];
+        newArr[x][i] = this.matrix[sq][x]
+        num += sq
+      }
+    }
+  }
+  console.log(newArr);
+  this.matrix = newArr;
+  return this.matrix;
 
 };
