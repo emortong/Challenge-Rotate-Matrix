@@ -20,16 +20,16 @@ describe("The Matrix Rotator", function () {
 
   });
 
-  // it("can rotate CounterClockwise", function () {
-  //   matrixRotator.rotate(Direction.CCW);
-  //   matrixRotator.rotate(Direction.CCW);
-  //   matrixRotator.matrix.should.be.deep.equal([
-  //                                           [3,7,0,3,7],
-  //                                           [9,9,9,8,8],
-  //                                           [1,2,6,8,3],
-  //                                           [0,5,3,6,0],
-  //                                           [8,4,3,0,9]
-  //                                         ]);
-  // });
+  it("can rotate CounterClockwise", function () {
+    matrixRotator.rotate(Direction.CCW);
+    matrixRotator.rotate(Direction.CCW);
+    matrixRotator.matrix.should.be.deep.equal([
+                                            [3,7,0,3,7],
+                                            [9,9,9,8,8],
+                                            [1,2,6,8,3],
+                                            [0,5,3,6,0],
+                                            [8,4,3,0,9]
+                                          ]);
+  });
 
 });

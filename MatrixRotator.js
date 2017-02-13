@@ -29,6 +29,7 @@ MatrixRotator.prototype.rotate = function(direction) {
   for(let z = 0; z < arrLen; z++) {
     newArr.push([])
   }
+
   if(direction === Direction.CW) {
     for(let i = 0; i < arrLen; i++) {
       sq--
@@ -40,7 +41,18 @@ MatrixRotator.prototype.rotate = function(direction) {
       }
     }
   }
-  console.log(newArr);
+  else {
+    for(let i = arrLen-1; i > -1; i--) {
+      sq--
+      for(let x = arrLen-1; x > -1; x--) {
+        newArr[x][i] = this.matrix[sq][x];
+        newArr[x][i] = this.matrix[sq][x];
+        newArr[x][i] = this.matrix[sq][x]
+        num -= sq
+      }
+    }
+    newArr = newArr.reverse()
+  }
   this.matrix = newArr;
   return this.matrix;
 
